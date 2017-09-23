@@ -1,46 +1,83 @@
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!--meta http-equiv="content-type" content="text/html; charset=utf-8"-->
   <title>Charles Agnello</title>
+  <link rel="stylesheet" href="resume.css">
 </head>
 <body lang="en-US">
-<table cellpadding="0" cellspacing="0">
-  <tr>
-    <td>
-      <div align="center" style="font-size: 24pt">CHARLES AGNELLO</div>
-      <div align="center">M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <hr>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <p align="center" style="font-size: 18pt">GENERAL QUALIFICATIONS</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <ul>
-        <li>Programming languages including: Java and Perl</li>
-        <li>Knowledgeable of RESTful web services</li>
-        <li>Functional knowledge of MongoDB 2.0, querying via the mongo-shell and the Java driver, db and data design, system administration</li>
-        <li>Basic knowledge of SQL with use of PostgreSQL, MySQL and Oracle</li>
-        <li>Test tools: JUnit, Mockito, Wiremock, and Cucumber</li>
-        <li>Experienced with SCRUM and Kanban</li>
-        <li>Productivity tools: JIRA, Confluence, Trello, Slack</li>
-        <li>CM Tools: Git and SVN</li>
-        <li>Other: Splunk, Maven, Zabbix, Spring, PagerDuty, Postman, JSON, Mac OS X, Linux</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <hr>
-    </td>
-  </tr>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <script type="text/babel">
+
+  class Divider extends React.Component {
+    render() {
+      return <tr><td><hr /></td></tr>;
+    }
+  }
+  class ResumeHeader extends React.Component {
+    render() {
+      return(
+        <tr>
+          <td>
+            <div id="centered" style={{fontSize: '24pt'}}>CHARLES AGNELLO</div>
+            <div id="centered">M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
+          </td>
+        </tr>);
+    }
+  }
+  class GeneralQualificationsHeader extends React.Component {
+    render() {
+      return (
+      <tr>
+        <td>
+          <p style={{fontSize: '18pt', textAlign: 'center'}}>GENERAL QUALIFICATIONS</p>
+        </td>
+      </tr>);
+    }
+  }
+  class GeneralQualifications extends React.Component {
+    render() {
+      return (
+      <tr>
+        <td>
+          <ul>
+            <li>Programming languages including: Java and Perl</li>
+            <li>Knowledgeable of RESTful web services</li>
+            <li>Functional knowledge of MongoDB 2.0, querying via the mongo-shell and the Java driver, db and data design, system administration</li>
+            <li>Basic knowledge of SQL with use of PostgreSQL, MySQL and Oracle</li>
+            <li>Test tools: JUnit, Mockito, Wiremock, and Cucumber</li>
+            <li>Experienced with SCRUM and Kanban</li>
+            <li>Productivity tools: JIRA, Confluence, Trello, Slack</li>
+            <li>CM Tools: Git and SVN</li>
+            <li>Other: Splunk, Maven, Zabbix, Spring, PagerDuty, Postman, JSON, Mac OS X, Linux</li>
+          </ul>
+        </td>
+      </tr>);
+    }
+  }
+  class Resume extends React.Component {
+    render() {
+      return (
+        <table cellPadding="0" cellSpacing="0">
+        <tbody>
+          <ResumeHeader />
+          <Divider />
+          <GeneralQualificationsHeader />
+          <GeneralQualifications />
+          <Divider />
+        </tbody>
+        </table>);
+    }
+  }
+  ReactDOM.render(
+    <Resume />,
+    document.getElementById('root')
+  );
+  </script>
+
+  <table>
   <tr>
     <td>
       <p align="center" style="font-size: 18pt">PROFESSIONAL EXPERIENCE</p>
@@ -156,16 +193,16 @@
   </tr-->
   <!--tr>
     <td>Rapid7 is a leading provider of security data and analytics solutions
-     that enable organizations to implement an active, analytics-driven 
-     approach to cyber security. We combine our extensive experience in 
-     security data and analytics and deep insight into attacker behaviors 
-     and techniques to make sense of the wealth of data available to 
-     organizations about their IT environments and users. Our solutions 
-     empower organizations to prevent attacks by providing visibility into 
-     vulnerabilities and to rapidly detect compromises, respond to breaches, 
-     and correct the underlying causes of attacks. Rapid7 is trusted by more 
-     than 4,150 organizations across 90 countries, including 34% of the 
-     Fortune 1000. To learn more about Rapid7 or get involved in our 
+     that enable organizations to implement an active, analytics-driven
+     approach to cyber security. We combine our extensive experience in
+     security data and analytics and deep insight into attacker behaviors
+     and techniques to make sense of the wealth of data available to
+     organizations about their IT environments and users. Our solutions
+     empower organizations to prevent attacks by providing visibility into
+     vulnerabilities and to rapidly detect compromises, respond to breaches,
+     and correct the underlying causes of attacks. Rapid7 is trusted by more
+     than 4,150 organizations across 90 countries, including 34% of the
+     Fortune 1000. To learn more about Rapid7 or get involved in our
      threat research, visit www.rapid7.com.
     </td>
   </tr>
@@ -185,7 +222,7 @@
         <li>Promoted to Lead QA Engineer for the quality of work completed, to build a team of QA engineers, and to lead an effort to automate the product testing</li>
       </ul>
     </td>
-  </tr>  
+  </tr>
   <tr>
     <td>
       <b>QA Engineer</b> | <b>09/2006 - 09/2007</b>
@@ -219,6 +256,3 @@
 </table>
 </body>
 </html>
-
-
-
