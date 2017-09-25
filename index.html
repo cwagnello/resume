@@ -37,26 +37,6 @@
       </tr>);
     }
   }
-  class GeneralQualifications extends React.Component {
-    render() {
-      return (
-      <tr>
-        <td>
-          <ul>
-            <li>Programming languages including: Java and Perl</li>
-            <li>Knowledgeable of RESTful web services</li>
-            <li>Functional knowledge of MongoDB 2.0, querying via the mongo-shell and the Java driver, db and data design, system administration</li>
-            <li>Basic knowledge of SQL with use of PostgreSQL, MySQL and Oracle</li>
-            <li>Test tools: JUnit, Mockito, Wiremock, and Cucumber</li>
-            <li>Experienced with SCRUM and Kanban</li>
-            <li>Productivity tools: JIRA, Confluence, Trello, Slack</li>
-            <li>CM Tools: Git and SVN</li>
-            <li>Other: Splunk, Maven, Zabbix, Spring, SpringBoot, PagerDuty, Postman, JSON, Mac OS X, Linux</li>
-          </ul>
-        </td>
-      </tr>);
-    }
-  }
   class CompanyHeader extends React.Component {
     render() {
       return (
@@ -81,13 +61,26 @@
   }
 
   function ListItem(props) {
-    return <li>{props.value}</li>;
+    return (<li>{props.value}</li>);
   }
+
   function List(props) {
     const items = props.value;
-    const listItems = items.map((item) =>
-            <ListItem value={item} />);
+    const listItems = items.map((item, index) =>
+            <ListItem key={index} value={item} />);
     return (<ul>{listItems}</ul>);
+  }
+
+  class Qualifications extends React.Component {
+    render() {
+      return (
+        <tr>
+          <td>
+            {<List value={this.props.items}/>}
+          </td>
+        </tr>
+      )
+    }
   }
   class Accomplishments extends React.Component {
     render() {
@@ -100,6 +93,18 @@
       )
     }
   }
+
+  const qualifications = [
+    "Programming languages including: Java and Perl",
+    "Knowledgeable of RESTful web services",
+    "Functional knowledge of MongoDB 2.0, querying via the mongo-shell and the Java driver, db and data design, system administration",
+    "Basic knowledge of SQL with use of PostgreSQL, MySQL and Oracle",
+    "Test tools: JUnit, Mockito, Wiremock, and Cucumber",
+    "Experienced with SCRUM and Kanban",
+    "Productivity tools: JIRA, Confluence, Trello, Slack",
+    "CM Tools: Git and SVN",
+    "Other: Splunk, Maven, Zabbix, Spring, SpringBoot, PagerDuty, Postman, JSON, Mac OS X, Linux",
+  ];
 
   const ticketmasterAccomplishments = [
     "Performed all steps in regard to the Software Development Life Cycle, vetted requirements with the Product team, designed, implemented new features/fixed bugs, did code reviews for team mates, wrote unit tests, wrote BDD tests based on acceptance criteria in Cucumber, performed releases, managed code repository, and periodically was on-call",
@@ -149,7 +154,7 @@
           <ResumeHeader />
           <Divider />
           <SectionHeader name="GENERAL QUALIFICATIONS"/>
-          <GeneralQualifications />
+          <Qualifications items={qualifications}/>
           <Divider />
           <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
           <CompanyHeader name="Ticketmaster" location="Hollywood, CA" dateRange="1/2013 - 2/2017"/>
