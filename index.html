@@ -21,8 +21,8 @@
       return(
         <tr>
           <td>
-            <div id="centered" style={{fontSize: '24pt'}}>CHARLES AGNELLO</div>
-            <div id="centered">M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
+            <div id="centered" style={{fontSize: '24pt', padding: '0px', border: '0px', margin: '0px'}}>CHARLES AGNELLO</div>
+            <div id="centered" style={{padding: '0px', border: '0px', margin: '0px'}}>M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
           </td>
         </tr>);
     }
@@ -32,7 +32,7 @@
       return (
       <tr>
         <td>
-          <p style={{fontSize: '18pt', textAlign: 'center'}}>{this.props.name}</p>
+          <p style={{fontSize: '18pt', textAlign: 'center', padding: '0px', border: '0px', margin: '0px'}}>{this.props.name}</p>
         </td>
       </tr>);
     }
@@ -41,7 +41,7 @@
     render() {
       return (
         <tr>
-         <td>
+         <td style={{padding: '0px', border: '0px', margin: '0px'}}>
            <b>{this.props.name}</b> | <b>{this.props.location}</b> | <b>{this.props.dateRange}</b>
          </td>
        </tr>
@@ -52,7 +52,7 @@
     render() {
       return(
         <tr>
-          <td>
+          <td style={{padding: '0px', border: '0px', margin: '0px'}}>
             <b>{this.props.name}</b> | <b>{this.props.dateRange}</b>
           </td>
         </tr>
@@ -75,7 +75,7 @@
     render() {
       return (
         <tr>
-          <td>
+          <td style={{padding: '0px', border: '0px', margin: '0px'}}>
             {<List value={this.props.items}/>}
           </td>
         </tr>
@@ -86,7 +86,7 @@
     render() {
       return (
         <tr>
-          <td>
+          <td style={{padding: '0px', border: '0px', margin: '0px'}}>
             {<List value={this.props.items}/>}
           </td>
         </tr>
@@ -139,8 +139,8 @@
       return (
         <tr>
           <td>
-            <div id="centered">Rose-Hulman Institute of Technology | Terre Haute, IN</div>
-            <div id="centered">Bachelor of Science in Computer Engineering</div>
+            <div id="centered" style={{padding: '0px', border: '0px', margin: '0px'}}>Rose-Hulman Institute of Technology | Terre Haute, IN</div>
+            <div id="centered" style={{padding: '0px', border: '0px', margin: '0px'}}>Bachelor of Science in Computer Engineering</div>
           </td>
         </tr>
       )
