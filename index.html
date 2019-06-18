@@ -94,7 +94,7 @@
     }
   }
 
-  const resumeSummary = "Software Engineer with proven development experience on Java based RESTful webservices powering public facing applications in a highly distributed system with high availability. Well versed in all phases of the software development lifecycle and knowledgeable about algorithms and data structures.";
+  const resumeSummary = "Software Engineer with proven development experience on Java based RESTful webservices powering public facing applications in a highly distributed system with high availability. Well versed in all phases of the software development lifecycle";
   const qualifications = [
     "Programming languages including: Java and Perl",
     "Knowledgeable of RESTful web services",
@@ -104,7 +104,15 @@
     "Experienced with SCRUM and Kanban",
     "Productivity tools: JIRA, Confluence, Trello, Slack",
     "CM Tools: Git and SVN",
-    "Other: Splunk, Maven, Zabbix, Spring, SpringBoot, PagerDuty, Postman, JSON, Mac OS X, Linux",
+    "Other: Dropwizard, Grafana, Prometheus, Metricio, Docker, Splunk, Maven, Zabbix, Spring, SpringBoot, PagerDuty, Postman, JSON, Mac OS X, Linux",
+  ];
+
+  const soundhoundAccomplishments = [
+    "Created a metric gathering library that is used in all of the Dropwizard applications. Designed the data aggregation in Prometheus with the intention of viewing the data in a single Grafana dashboard",
+    "Created a dashboard (using Metricio) that displays the current version of all the web services our team maintains",
+    "Designed and implemented a robust system for replicating data across multiple datacenters",
+    "Mentored the other Java engineers on best practices in regard to writing Java",
+    "Improved the software development process by instituting a common pattern for developing all of the Dropwizard applications (logging, monitoring, documentation, coding style, consistency, and coding clarity)"
   ];
 
   const ticketmasterAccomplishments = [
@@ -153,6 +161,8 @@
           <Summary value={resumeSummary} />
           <Divider />
           <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
+          <CompanyHeader name="SoundHound inc" dateRange="5/2018 - Present" role="Senior Software Engineer"/>
+          <Accomplishments items={soundhoundAccomplishments}/>
           <CompanyHeader name="Ticketmaster" dateRange="1/2013 - 2/2017" role="Software Engineer"/>
           <Accomplishments items={ticketmasterAccomplishments}/>
           <CompanyHeader name="CityGrid Media" dateRange="01/2010 - 12/2012" role="Software Engineer"/>
