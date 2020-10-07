@@ -96,15 +96,16 @@
 
   const resumeSummary = "Software Engineer with proven development experience on Java based RESTful web services as APIs powering public facing applications in a highly distributed system with high availability. Well versed in all phases of the software development lifecycle";
   const qualifications = [
-    "Programming languages: Java and Perl",
+    "Programming languages: Java, GoLang, and Perl",
     "Knowledgeable of RESTful web services",
+    "NoSQL data stores: SOLR, MongoDB, Cassandra",
     "Functional knowledge of MongoDB, querying via the mongo-shell and the Java driver, db and data design, system administration",
-    "Basic knowledge of SQL with use of PostgreSQL, MySQL and Oracle",
+    "Knowledge of SQL with use of PostgreSQL, MySQL and Oracle",
     "Test tools: JUnit, Mockito, Wiremock, and Cucumber",
     "Experienced with SCRUM and Kanban",
     "Productivity tools: JIRA, Confluence, Trello, Slack",
     "CM Tools: Git and SVN",
-    "Other: Dropwizard, Grafana, Prometheus, Metricio, Docker, Splunk, Maven, Zabbix, Spring, SpringBoot, PagerDuty, Postman, JSON, Regular Expressions, Mac OS X, Linux",
+    "Other: Dropwizard, Grafana, Prometheus, Metricio, Docker, Kafka, Splunk, Maven, Zabbix, Bash (shell scripting), Jax-RS, Spring, SpringBoot, Spring MVC, PagerDuty, Postman, JSON, Regular Expressions, Mac OS X, Linux",
   ];
 
   const soundhoundAccomplishments = [
@@ -158,6 +159,9 @@
           <ResumeHeader />
           <SectionHeader name="SUMMARY" />
           <Summary value={resumeSummary} />
+          <Divider />
+          <SectionHeader name="QUALIFICATIONS" />
+          <Qualifications items={qualifications}/>
           <Divider />
           <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
           <CompanyHeader name="SoundHound inc" dateRange="5/2018 - 4/2020" role="Senior Software Engineer"/>
