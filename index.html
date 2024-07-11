@@ -94,20 +94,33 @@
     }
   }
 
+  class Technologies extends React.Component {
+    render() {
+      return (
+        <tr>
+          <td>
+            <p style={{padding: '0px', border: '0px', margin: '0px'}}><b>Technology:</b> {this.props.value}</p>
+          </td>
+        </tr>
+      )
+    }
+  }
+
   const resumeSummary = "Software Engineer with proven development experience on Java based RESTful web services as APIs powering public facing applications in a highly distributed system with high availability. Well versed in all phases of the software development lifecycle";
   const qualifications = [
     "Programming languages: Java 8, Java 17, and Perl",
     "Knowledgeable of RESTful web services",
-    "NoSQL data stores: SOLR, MongoDB, Cassandra",
+    "NoSQL data stores: SOLR, MongoDB, Redis, Cassandra",
     "Functional knowledge of MongoDB, querying via the mongo-shell and the Java driver, db and data design, system administration",
     "Knowledge of SQL with use of PostgreSQL, MySQL and Oracle",
     "Test tools: JUnit, Mockito, AssertJ, Wiremock, and Cucumber",
     "Experienced with SCRUM and Kanban",
     "Productivity tools: JIRA, Confluence, Trello, Slack",
     "CM Tools: Git and SVN",
-    "Other: AWS, Kubernetes, Open Telemetry, Multipass, Dropwizard, Grafana, Prometheus, Metricio, Docker, Kafka, Splunk, Maven, Zabbix, Bash (shell scripting), Jax-RS, Spring, SpringBoot 2/3, Spring MVC, PagerDuty, Postman, JSON, Regular Expressions, Mac OS X, Linux",
+    "Other: AWS, Kubernetes, Open Telemetry, Multipass, Addigy, Dropwizard, Grafana, Prometheus, Metricio, Docker, Kafka, Splunk, Maven, Zabbix, Bash (shell scripting), Jax-RS, Spring, SpringBoot 2/3, Spring MVC, PagerDuty, Postman, JSON, Regular Expressions, Mac OS X, Linux",
   ];
 
+  const availTech = "Java 8/17, Springboot 2/3, AWS, Kubernetes, Shell, Postgres, Redis";
   const availAccomplishments = [
       "Created two new microservices: one to manage 3rd party integrations and one to manage the status of internal API services",
       "Redesigned and implemented the error handling in the web services to be consistent",
@@ -120,14 +133,16 @@
       "Remediating security vulnerabilities found via scans from AWS ECR image scanner"
   ];
 
+  const soundhoundTech = "Java 8, Dropwizard, GCP, Jenkins, MongoDB, Prometheus, Grafana";
   const soundhoundAccomplishments = [
     "Created a metric gathering library that is used in all of the Dropwizard applications. Designed the data aggregation in Prometheus with the intention of viewing the data in a single Grafana dashboard",
-    "Created a dashboard (using Metricio) that displays the current version of all the web services our team maintains",
+    "Created a React.js dashboard (using Metricio) that displays the current version of all the web services our team maintains",
     "Designed and implemented a robust system for replicating data across multiple datacenters",
     "Mentored the other Java engineers on best practices in regard to writing Java",
     "Improved the software development process by instituting a common pattern for developing the Dropwizard applications (logging, monitoring, documentation, coding style, consistency, and coding clarity)"
   ];
 
+  const ticketmasterTech = "Java 8, Spring MVC, Springboot 1, Splunk, MySQL, OpenTSDB, Postgres";
   const ticketmasterAccomplishments = [
     "Created a new Springboot microservice (to replace a legacy system) that is part of the Ticketmaster Open Platform initiative",
     "Monitored onsales for key events to ensure that all systems were operating smoothly and to act quickly when/if any problems occurred",
@@ -144,6 +159,7 @@
     "Trained and mentored junior team members in software development best practices"
   ];
 
+  const citygridTech = "Spring, Spring MVC, MongoDB, Java 6, JaxRS, AWS, Perl";
   const citygridAccomplishments = [
     "Successfully reworked the build pipeline to use Continuous Integration and integration tests",
     "Added the ability to run Jmeter performance tests through Hudson with custom Perl scripts to analyze the data",
@@ -177,12 +193,16 @@
           <Divider />
           <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
           <CompanyHeader name="Avail Medsystems" dateRange="11/2020 - 11/2023" role="Senior Software Engineer"/>
+          <Technologies value={availTech}/>
           <Accomplishments items={availAccomplishments}/>
           <CompanyHeader name="SoundHound inc" dateRange="5/2018 - 4/2020" role="Senior Software Engineer"/>
+          <Technologies value={soundhoundTech}/>
           <Accomplishments items={soundhoundAccomplishments}/>
           <CompanyHeader name="Ticketmaster" dateRange="1/2013 - 2/2017" role="Software Engineer"/>
+          <Technologies value={ticketmasterTech}/>
           <Accomplishments items={ticketmasterAccomplishments}/>
           <CompanyHeader name="CityGrid Media" dateRange="01/2010 - 12/2012" role="Software Engineer"/>
+          <Technologies value={citygridTech}/>
           <Accomplishments items={citygridAccomplishments}/>
           <Divider />
           <SectionHeader name="EDUCATION"/>
