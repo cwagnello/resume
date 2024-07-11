@@ -3,61 +3,52 @@
   <!--meta http-equiv="content-type" content="text/html; charset=utf-8"-->
   <title>Charles Agnello</title>
   <link rel="stylesheet" href="resume.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.8/babel.min.js"></script>
+  <!--script type="text/babel"></script-->
 </head>
 <body lang="en-US">
   <div id="root"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-  <script type="text/babel">
 
-  class Divider extends React.Component {
-    render() {
-      return <tr><td style={{padding: '0px', border: '0px', margin: '0px'}}><hr /></td></tr>;
-    }
+  <script type="text/babel">
+  function Divider() {
+    return (<tr><td style={{padding: '0px', border: '0px', margin: '0px'}}><hr /></td></tr>);
   }
-  class ResumeHeader extends React.Component {
-    render() {
-      return(
-        <tr>
-          <td>
-            <div id="centered" style={{fontSize: '24pt', padding: '0px', border: '0px', margin: '0px'}}>CHARLES AGNELLO</div>
-            <div id="centered" style={{padding: '0px', border: '0px', margin: '0px'}}>M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
-          </td>
-        </tr>);
-    }
-  }
-  class Summary extends React.Component {
-    render() {
-      return (
-        <tr>
-          <td>
-            <p style={{padding: '0px', border: '0px', margin: '0px'}}>{this.props.value}</p>
-          </td>
-        </tr>
-      )
-    }
-  }
-  class SectionHeader extends React.Component {
-    render() {
-      return (
-      <tr>
+  function ResumeHeader() {
+    return(
+    <tr>
         <td>
-          <p style={{fontSize: '18pt', textAlign: 'left', padding: '0px', border: '0px', margin: '0px'}}>{this.props.name}</p>
+        <div id="centered" style={{fontSize: '24pt', padding: '0px', border: '0px', margin: '0px'}}>CHARLES AGNELLO</div>
+        <div id="centered" style={{padding: '0px', border: '0px', margin: '0px'}}>M: 317.603.5255 | E: charles.w.agnello@gmail.com | Santa Clara, CA 95051</div>
         </td>
-      </tr>);
-    }
+    </tr>);
   }
-  class CompanyHeader extends React.Component {
-    render() {
-      return (
-        <tr>
-         <td style={{padding: '0px', border: '0px', margin: '0px'}}>
-           <b>{this.props.name}</b> | <b>{this.props.dateRange}</b> | <b>{this.props.role}</b>
-         </td>
-       </tr>
-      )
-    }
+  function Summary({value}) {
+    return (
+    <tr>
+        <td>
+        <p style={{padding: '0px', border: '0px', margin: '0px'}}>{value}</p>
+        </td>
+    </tr>
+    )
+  }
+  function SectionHeader({name}) {
+    return (
+    <tr>
+    <td>
+        <p style={{fontSize: '18pt', textAlign: 'left', padding: '0px', border: '0px', margin: '0px'}}>{name}</p>
+    </td>
+    </tr>);
+  }
+  function CompanyHeader({name, dateRange, role}) {
+    return (
+    <tr>
+        <td style={{padding: '0px', border: '0px', margin: '0px'}}>
+        <b>{name}</b> | <b>{dateRange}</b> | <b>{role}</b>
+        </td>
+    </tr>
+    )
   }
 
   function ListItem(props) {
@@ -71,39 +62,33 @@
     return (<ul>{listItems}</ul>);
   }
 
-  class Qualifications extends React.Component {
-    render() {
-      return (
-        <tr>
-          <td>
-            {<List value={this.props.items}/>}
-          </td>
-        </tr>
-      )
-    }
+  function Qualifications({items}) {
+    return (
+    <tr>
+        <td>
+        {<List value={items}/>}
+        </td>
+    </tr>
+    )
   }
-  class Accomplishments extends React.Component {
-    render() {
-      return (
-        <tr>
-          <td>
-            {<List value={this.props.items}/>}
-          </td>
-        </tr>
-      )
-    }
+  function Accomplishments({items}) {
+    return (
+    <tr>
+        <td>
+        {<List value={items}/>}
+        </td>
+    </tr>
+    )
   }
 
-  class Technologies extends React.Component {
-    render() {
-      return (
-        <tr>
-          <td>
-            <p style={{padding: '0px', border: '0px', margin: '0px'}}><b>Technology:</b> {this.props.value}</p>
-          </td>
-        </tr>
-      )
-    }
+  function Technologies({value}) {
+    return (
+    <tr>
+        <td>
+        <p style={{padding: '0px', border: '0px', margin: '0px'}}><b>Technology:</b> {value}</p>
+        </td>
+    </tr>
+    )
   }
 
   const resumeSummary = "Software Engineer with proven development experience on Java based RESTful web services as APIs powering public facing applications in a highly distributed system with high availability. Well versed in all phases of the software development lifecycle";
@@ -168,53 +153,49 @@
   ];
   const citygridAccomplishments2 = ["Promoted to Software Engineer"];
 
-  class EducationData extends React.Component {
-    render() {
-      return (
-        <tr>
-          <td>
-            <div style={{padding: '0px', border: '0px', margin: '0px'}}>Rose-Hulman Institute of Technology, Terre Haute, IN | Bachelor of Science in Computer Engineering</div>
-          </td>
-        </tr>
-      )
-    }
+  function EducationData() {
+    return (
+    <tr>
+        <td>
+        <div style={{padding: '0px', border: '0px', margin: '0px'}}>Rose-Hulman Institute of Technology, Terre Haute, IN | Bachelor of Science in Computer Engineering</div>
+        </td>
+    </tr>
+    )
   }
-  class Resume extends React.Component {
-    render() {
-      return (
-        <table cellPadding="0" cellSpacing="0">
-        <tbody>
-          <ResumeHeader />
-          <SectionHeader name="SUMMARY" />
-          <Summary value={resumeSummary} />
-          <Divider />
-          <SectionHeader name="QUALIFICATIONS" />
-          <Qualifications items={qualifications}/>
-          <Divider />
-          <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
-          <CompanyHeader name="Avail Medsystems" dateRange="11/2020 - 11/2023" role="Senior Software Engineer"/>
-          <Technologies value={availTech}/>
-          <Accomplishments items={availAccomplishments}/>
-          <CompanyHeader name="SoundHound inc" dateRange="5/2018 - 4/2020" role="Senior Software Engineer"/>
-          <Technologies value={soundhoundTech}/>
-          <Accomplishments items={soundhoundAccomplishments}/>
-          <CompanyHeader name="Ticketmaster" dateRange="1/2013 - 2/2017" role="Software Engineer"/>
-          <Technologies value={ticketmasterTech}/>
-          <Accomplishments items={ticketmasterAccomplishments}/>
-          <CompanyHeader name="CityGrid Media" dateRange="01/2010 - 12/2012" role="Software Engineer"/>
-          <Technologies value={citygridTech}/>
-          <Accomplishments items={citygridAccomplishments}/>
-          <Divider />
-          <SectionHeader name="EDUCATION"/>
-          <EducationData />
-        </tbody>
-        </table>);
-    }
+  function Resume() {
+    return (
+    <table cellPadding="0" cellSpacing="0">
+    <tbody>
+        <ResumeHeader />
+        <SectionHeader name="SUMMARY" />
+        <Summary value={resumeSummary} />
+        <Divider />
+        <SectionHeader name="QUALIFICATIONS" />
+        <Qualifications items={qualifications}/>
+        <Divider />
+        <SectionHeader name="PROFESSIONAL EXPERIENCE"/>
+        <CompanyHeader name="Avail Medsystems" dateRange="11/2020 - 11/2023" role="Senior Software Engineer"/>
+        <Technologies value={availTech}/>
+        <Accomplishments items={availAccomplishments}/>
+        <CompanyHeader name="SoundHound inc" dateRange="5/2018 - 4/2020" role="Senior Software Engineer"/>
+        <Technologies value={soundhoundTech}/>
+        <Accomplishments items={soundhoundAccomplishments}/>
+        <CompanyHeader name="Ticketmaster" dateRange="1/2013 - 2/2017" role="Software Engineer"/>
+        <Technologies value={ticketmasterTech}/>
+        <Accomplishments items={ticketmasterAccomplishments}/>
+        <CompanyHeader name="CityGrid Media" dateRange="01/2010 - 12/2012" role="Software Engineer"/>
+        <Technologies value={citygridTech}/>
+        <Accomplishments items={citygridAccomplishments}/>
+        <Divider />
+        <SectionHeader name="EDUCATION"/>
+        <EducationData />
+    </tbody>
+    </table>);
   }
-  ReactDOM.render(
-    <Resume />,
+
+  ReactDOM.createRoot(
     document.getElementById('root')
-  );
+  ).render(<Resume />);
   </script>
 
   <!--tr>
